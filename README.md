@@ -12,7 +12,7 @@ Features(tests) are located at:
 src/test/resources/features
 
 
-Basically run it from Intellij as usual cucumber scenario or:
+Run it from Intellij as usual cucumber scenario or:
 * right click on feature file to run all test cases
 * go into feature file and run single test from there
 
