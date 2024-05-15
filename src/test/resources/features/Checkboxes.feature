@@ -1,4 +1,4 @@
-Feature: Checkboxes funcionality
+Feature: Checkboxes functionality
   As user I want to be able to check checkboxes
 
   @Test

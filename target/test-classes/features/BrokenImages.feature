@@ -1,4 +1,4 @@
-Feature: Broken Images
+Feature: Broken Images functionality
   As tester I want to be able to
   test if images are broken or not
 

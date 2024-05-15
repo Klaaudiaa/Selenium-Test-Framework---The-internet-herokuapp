@@ -7,12 +7,16 @@ import io.cucumber.testng.CucumberOptions;
         features = {
                 "src/test/resources/features/AddRemove.feature",
                 "src/test/resources/features/BasicAuth.feature",
-                "src/test/resources/features/BrokenImages.feature"
+                "src/test/resources/features/BrokenImages.feature",
+                "src/test/resources/features/Checkboxes.feature",
+                "src/test/resources/features/Dropdown.feature"
         },
         glue = {
                 "steps.AddRemoveElementSteps",
                 "steps.BasicAuthSteps",
-                "steps.BrokenImagesSteps"
+                "steps.BrokenImagesSteps",
+                "steps.CheckboxesSteps",
+                "steps.DropdownSteps"
         },
         plugin = {
                 "summary",
