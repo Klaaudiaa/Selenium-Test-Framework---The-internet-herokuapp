@@ -21,13 +21,11 @@ public class BrokenImagesPage {
 
     public int validateInvalidImages() {
         List<WebElement> allImagesList = driver.findElements(By.tagName("img"));
-        System.out.println("Total number of images are " + allImagesList.size());
         for (WebElement image : allImagesList) {
             if (image != null) {
                 verifyActiveImage(image);
             }
         }
-        System.out.println("Total no. of invalid images are " + invalidImageCount);
         return invalidImageCount;
     }
 

@@ -5,6 +5,7 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import pages.HomePage;
 
 public class BaseHooks {
@@ -26,4 +27,9 @@ public class BaseHooks {
     public void tearDown() {
         getDriver().quit();
     }
-}
+
+    public BaseHooks(WebDriver driver) {
+       this.driver = (ThreadLocal<WebDriver>) driver;
+        PageFactory.initElements(driver, this); // Initialize the elements
+    }
+    }

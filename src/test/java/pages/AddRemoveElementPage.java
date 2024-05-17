@@ -3,24 +3,28 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class AddRemoveElementPage {
-        private final By addButton = By.cssSelector("div button");
-        private final By removeButton = By.className("added-manually");
         private WebDriver driver;
+    @FindBy(css = "div button")
+    private WebElement addButton;
+    @FindBy(css = "added-manually")
+    private WebElement removeButton;
         public AddRemoveElementPage(WebDriver driver) {
         this.driver = driver;
     }
 
         public void clickAddButton(){
-            driver.findElement(addButton).click();
+            addButton.click();
         }
 
         public void clickRemoveButton(){
-            driver.findElement(removeButton).click();
+            removeButton.click();
         }
         public boolean checkAddedElement(){
-            return driver.findElement(removeButton).isDisplayed();
+            return removeButton.isDisplayed();
         }
         public boolean isElementPresent(By locatorKey) {
             try {
