@@ -4,32 +4,20 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
-import pages.HomePage;
+import testContext.TestContext;
 
 public class BaseHooks {
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-
-    public static WebDriver getDriver() {
-        return driver.get();
-    }
+    private static WebDriver driver;
 
     @Before
     public void setUp() {
-        ChromeDriver d = new ChromeDriver();
-        d.manage().window().setSize(new Dimension(1552, 840));
-        driver.set(d);
-        getDriver().get("https://the-internet.herokuapp.com");
+        driver = TestContext.getInstance();
+        driver.get("https://the-internet.herokuapp.com");
+        driver.manage().window().setSize(new Dimension(1552, 840));
     }
 
     @After
     public void tearDown() {
-        getDriver().quit();
+        TestContext.quit();
     }
-
-    public BaseHooks(WebDriver driver) {
-       this.driver = (ThreadLocal<WebDriver>) driver;
-        PageFactory.initElements(driver, this); // Initialize the elements
-    }
-    }
+}

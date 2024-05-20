@@ -5,23 +5,27 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class AddRemoveElementPage {
         private WebDriver driver;
     @FindBy(css = "div button")
     private WebElement addButton;
-    @FindBy(css = "added-manually")
+    @FindBy(className = "added-manually")
     private WebElement removeButton;
         public AddRemoveElementPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-        public void clickAddButton(){
+        public AddRemoveElementPage clickAddButton(){
             addButton.click();
+            return this;
         }
 
-        public void clickRemoveButton(){
+        public AddRemoveElementPage clickRemoveButton(){
             removeButton.click();
+            return this;
         }
         public boolean checkAddedElement(){
             return removeButton.isDisplayed();

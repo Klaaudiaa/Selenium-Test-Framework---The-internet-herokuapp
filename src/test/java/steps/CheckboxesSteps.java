@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.CheckboxesPage;
 import pages.HomePage;
+import testContext.TestContext;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -15,10 +16,9 @@ public class CheckboxesSteps {
     private final CheckboxesPage checkboxesPage;
 
     public CheckboxesSteps() {
-        this.homePage = new HomePage(BaseHooks.getDriver());
-        this.checkboxesPage = new CheckboxesPage(BaseHooks.getDriver());
+        this.homePage = new HomePage(TestContext.getInstance());
+        this.checkboxesPage = new CheckboxesPage(TestContext.getInstance());
     }
-
     @Given("I am on the checkboxes page")
     public void i_am_on_the_checkboxes_page() {
         homePage.clickCheckboxesPage();

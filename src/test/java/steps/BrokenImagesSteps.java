@@ -6,14 +6,15 @@ import io.cucumber.java.en.Then;
 import static org.testng.Assert.assertEquals;
 import pages.BrokenImagesPage;
 import pages.HomePage;
+import testContext.TestContext;
 
 public class BrokenImagesSteps {
     private final HomePage homePage;
     private final BrokenImagesPage brokenImagesPage;
 
     public BrokenImagesSteps() {
-        this.homePage = new HomePage(BaseHooks.getDriver());
-        this.brokenImagesPage = new BrokenImagesPage(BaseHooks.getDriver());
+        this.homePage = new HomePage(TestContext.getInstance());
+        this.brokenImagesPage = new BrokenImagesPage(TestContext.getInstance());
     }
 
     @Given("I am on the broken images page")

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -16,10 +17,12 @@ public class DropdownPage {
 
     public DropdownPage(WebDriver driver){
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    public void selectFromDropDown(String option){
+    public DropdownPage selectFromDropDown(String option){
         findDropDownElement().selectByVisibleText(option);
+        return this;
     }
 
     public List<String> getSelectedOptions(){

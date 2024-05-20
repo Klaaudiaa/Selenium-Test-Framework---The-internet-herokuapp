@@ -4,6 +4,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.BasicAuthPage;
 import pages.HomePage;
+import testContext.TestContext;
 
 import static org.testng.Assert.assertTrue;
 
@@ -13,8 +14,8 @@ public class BasicAuthSteps {
     private final BasicAuthPage basicAuthPage;
 
     public BasicAuthSteps() {
-        this.homePage = new HomePage(BaseHooks.getDriver());
-        this.basicAuthPage = new BasicAuthPage(BaseHooks.getDriver());
+        this.homePage = new HomePage(TestContext.getInstance());
+        this.basicAuthPage = new BasicAuthPage(TestContext.getInstance());
     }
     @Given ("I am on the basic authorization page")
     public void i_am_on_the_basic_authorization_page() {homePage.clickBasicAuthPage();}

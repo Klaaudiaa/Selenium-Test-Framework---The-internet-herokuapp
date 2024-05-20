@@ -4,11 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class CheckboxesPage {
         private WebDriver driver;
         public CheckboxesPage(WebDriver driver) {
             this.driver = driver;
+            PageFactory.initElements(driver, this);
         }
     @FindBy(xpath = "//*[@id=\"checkboxes\"]/input[1]")
     private WebElement checkbox1;
@@ -23,10 +25,12 @@ public class CheckboxesPage {
             boolean isCheckbox2Selected = checkbox2.isSelected();
             return isCheckbox2Selected;
         }
-        public void clickCheckbox1(){
+        public CheckboxesPage clickCheckbox1(){
             checkbox1.click();
+            return this;
         }
-        public void clickCheckbox2(){
+        public CheckboxesPage clickCheckbox2(){
             checkbox2.click();
+            return this;
         }
     }

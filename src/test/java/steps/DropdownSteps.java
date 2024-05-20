@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import pages.CheckboxesPage;
 import pages.DropdownPage;
 import pages.HomePage;
+import testContext.TestContext;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,8 +16,8 @@ public class DropdownSteps {
     private final DropdownPage dropdownPage;
 
     public DropdownSteps() {
-        this.homePage = new HomePage(BaseHooks.getDriver());
-        this.dropdownPage = new DropdownPage(BaseHooks.getDriver());
+        this.homePage = new HomePage(TestContext.getInstance());
+        this.dropdownPage = new DropdownPage(TestContext.getInstance());
     }
 
     @Given ("I am on the dropdown page")

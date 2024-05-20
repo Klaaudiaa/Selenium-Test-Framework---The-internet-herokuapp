@@ -8,14 +8,15 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import pages.AddRemoveElementPage;
 import pages.HomePage;
+import testContext.TestContext;
 
 public class AddRemoveElementSteps {
     private final HomePage homePage;
     private final AddRemoveElementPage addRemoveElementPage;
 
     public AddRemoveElementSteps() {
-        this.homePage = new HomePage(BaseHooks.getDriver());
-        this.addRemoveElementPage = new AddRemoveElementPage(BaseHooks.getDriver());
+        this.homePage = new HomePage(TestContext.getInstance());
+        this.addRemoveElementPage = new AddRemoveElementPage(TestContext.getInstance());
     }
     @Given("I am on the add remove element page")
     public void i_am_on_the_add_remove_element_page() {homePage.clickAddRemoveElement();}
