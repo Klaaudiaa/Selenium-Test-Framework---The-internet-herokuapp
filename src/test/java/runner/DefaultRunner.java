@@ -10,7 +10,8 @@ import io.cucumber.testng.CucumberOptions;
                 "src/test/resources/features/BrokenImages.feature",
                 "src/test/resources/features/Checkboxes.feature",
                 "src/test/resources/features/Dropdown.feature",
-                "src/test/resources/features/ForgotPassword.feature"
+                "src/test/resources/features/ForgotPassword.feature",
+                "src/test/resources/features/DragAdnDrop.feature"
         },
         glue = {
                 "steps.AddRemoveElementSteps",
@@ -18,7 +19,8 @@ import io.cucumber.testng.CucumberOptions;
                 "steps.BrokenImagesSteps",
                 "steps.CheckboxesSteps",
                 "steps.DropdownSteps",
-                "steps.ForgotPasswordSteps"
+                "steps.ForgotPasswordSteps",
+                "steps.DragAdnDropSteps"
         },
         plugin = {
                 "summary",

@@ -62,6 +62,10 @@ public class HomePage {
             clickLink("Basic Auth");
             return new BasicAuthPage(driver);
         }
+    public DragAndDropPage clickDragAndDrop(){
+        clickLink("Drag and Drop");
+        return new DragAndDropPage(driver);
+    }
         public JSAlertPage clickJavacriptAlerts(){
             clickLink("JavaScript Alerts");
             return new JSAlertPage(driver);
