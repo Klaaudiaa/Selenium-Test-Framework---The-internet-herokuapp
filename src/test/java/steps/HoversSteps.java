@@ -3,7 +3,6 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import pages.HoversPage;
 import testContext.TestContext;
